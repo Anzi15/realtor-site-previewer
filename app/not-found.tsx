@@ -2,42 +2,31 @@
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import React, { ReactNode } from "react";
-import Head from "next/head";
 
 interface AuroraBackgroundProps extends React.HTMLProps<HTMLDivElement> {
   children: ReactNode;
   showRadialGradient?: boolean;
-  realtorName?: string;
 }
 
 export const AuroraBackground = ({
   className,
   children,
   showRadialGradient = true,
-  realtorName = "Your Realtor",
   ...props
 }: AuroraBackgroundProps) => {
   return (
-    <>
-      <Head>
-        <title>{realtorName} | Realtor Website</title>
-        <meta
-          name="description"
-          content={`Discover stunning real estate listings and services with ${realtorName}. Your dream home starts here.`}
-        />
-      </Head>
-      <main>
-        <div
-          className={cn(
-            "relative flex flex-col  h-[100vh] items-center justify-center bg-zinc-50 dark:bg-zinc-900  text-slate-950 transition-bg",
-            className
-          )}
-          {...props}
-        >
-          <div className="absolute inset-0 overflow-hidden">
-            <div
-              className={cn(
-                `
+    <main>
+      <div
+        className={cn(
+          "relative flex flex-col  h-[100vh] items-center justify-center bg-zinc-50 dark:bg-zinc-900  text-slate-950 transition-bg",
+          className
+        )}
+        {...props}
+      >
+        <div className="absolute inset-0 overflow-hidden">
+          <div
+            className={cn(
+              `
             [--white-gradient:repeating-linear-gradient(100deg,var(--white)_0%,var(--white)_7%,var(--transparent)_10%,var(--transparent)_12%,var(--white)_16%)]
             [--dark-gradient:repeating-linear-gradient(100deg,var(--black)_0%,var(--black)_7%,var(--transparent)_10%,var(--transparent)_12%,var(--black)_16%)]
             [--aurora:repeating-linear-gradient(100deg,var(--blue-500)_10%,var(--indigo-300)_15%,var(--blue-300)_20%,var(--violet-200)_25%,var(--blue-400)_30%)]
@@ -53,22 +42,21 @@ export const AuroraBackground = ({
             pointer-events-none
             absolute -inset-[10px] opacity-50 will-change-transform`,
 
-                showRadialGradient &&
-                  `[mask-image:radial-gradient(ellipse_at_100%_0%,black_10%,var(--transparent)_70%)]`
-              )}
-            ></div>
-          </div>
-          {children}
+              showRadialGradient &&
+                `[mask-image:radial-gradient(ellipse_at_100%_0%,black_10%,var(--transparent)_70%)]`
+            )}
+          ></div>
         </div>
-      </main>
-    </>
+        {children}
+      </div>
+    </main>
   );
 };
 
 // 👇 Add this if you want to use it as the default export (e.g., in /not-found.tsx)
 export default function NotFoundWrapper() {
   return (
-    <AuroraBackground realtorName="Jane Doe">
+<AuroraBackground>
       <motion.div
         initial={{ opacity: 0.0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -86,9 +74,10 @@ export default function NotFoundWrapper() {
           Let's get you a full version of this realtor website.
         </div>
         <a target="_blank" href="https://wa.me/923248226367?text=hey%20anzi,%20i%20want%20a%20full%20version%20of%20realtor%20website">
-          <button className="bg-black dark:bg-white rounded-full w-fit text-white dark:text-black px-4 py-2">
-            Let's get started
-          </button>
+
+        <button className="bg-black dark:bg-white rounded-full w-fit text-white dark:text-black px-4 py-2">
+          Let's get started
+        </button>
         </a>
       </motion.div>
     </AuroraBackground>

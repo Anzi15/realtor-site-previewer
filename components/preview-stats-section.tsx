@@ -147,7 +147,7 @@ export default function PreviewStatsSection({ realtor }: { realtor: Realtor }) {
           </motion.p>
 
           <motion.a
-            href="https://wa.me/93248226367"
+            href="/contact"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"

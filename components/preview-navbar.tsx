@@ -7,9 +7,9 @@ import { Button } from "@/components/ui/button"
 import type { Realtor } from "@/lib/types"
 
 const navItems = [
-  { name: "Home", href: "#hero" },
-  { name: "About", href: "#about" },
-  { name: "Properties", href: "#properties" },
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Properties", href: "/pro" },
   { name: "Services", href: "#services" },
   { name: "Testimonials", href: "#testimonials" },
   { name: "Contact", href: "#contact" },
@@ -48,6 +48,7 @@ export default function PreviewNavbar({ realtor }: { realtor: Realtor }) {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <motion.div className="flex-shrink-0" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+
             <button onClick={() => scrollToSection("#hero")} className="flex items-center space-x-2 cursor-pointer">
               <div className="h-8 w-8 rounded-full bg-gradient-to-r from-blue-600 to-purple-600" />
               <span className={`text-xl font-bold ${scrolled ? "text-gray-900" : "text-white"}`}>
@@ -59,16 +60,19 @@ export default function PreviewNavbar({ realtor }: { realtor: Realtor }) {
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
-              {navItems.map((item) => (
+              {navItems.map((item, i) => (
+                <a href={item.href} key={i}>
+
                 <button
                   key={item.name}
-                  onClick={() => scrollToSection(item.href)}
+                  
                   className={`px-3 py-2 text-sm font-medium transition-colors hover:text-blue-600 cursor-pointer ${
                     scrolled ? "text-gray-700" : "text-white/90"
                   }`}
-                >
+                  >
                   {item.name}
                 </button>
+                  </a>
               ))}
             </div>
           </div>
@@ -88,7 +92,7 @@ export default function PreviewNavbar({ realtor }: { realtor: Realtor }) {
             </motion.a>
 
             <motion.a
-              href="https://wa.me/93248226367"
+              href={`https://wa.me/${realtor.phone}`}
               target="_blank"
               rel="noopener noreferrer"
               className="relative overflow-hidden rounded-lg bg-gradient-to-r from-green-500 to-green-600 px-6 py-2 text-white shadow-lg"
@@ -144,6 +148,7 @@ export default function PreviewNavbar({ realtor }: { realtor: Realtor }) {
               ))}
               <div className="pt-4 pb-2 border-t border-gray-200">
                 <a
+                
                   href={`tel:${realtor.phone}`}
                   className="flex items-center space-x-2 px-3 py-2 text-gray-700 hover:bg-gray-50 rounded-md"
                 >

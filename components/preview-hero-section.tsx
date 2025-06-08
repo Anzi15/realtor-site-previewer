@@ -24,7 +24,7 @@ export default function PreviewHeroSection({ realtor }: { realtor: Realtor }) {
   return (
     <section
       id="hero"
-      className="relative min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 overflow-hidden"
+      className="relative min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800  max-w-full overflow-hidden" 
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fillRule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%239C92AC&quot; fillOpacity=&quot;0.05&quot;%3E%3Ccircle cx=&quot;30&quot; cy=&quot;30&quot; r=&quot;4&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20" />
@@ -132,7 +132,7 @@ export default function PreviewHeroSection({ realtor }: { realtor: Realtor }) {
                 transition={{ duration: 0.3 }}
               >
                 <Image
-                  src={realtor.imgSrc || "/placeholder.svg"}
+                  src={realtor.imgSrc || "/https://st.depositphotos.com/1194063/2151/i/450/depositphotos_21515189-stock-photo-agent-with-house-model-and.jpg"}
                   alt={realtor.fullName}
                   fill
                   className="object-cover aspect-square"
@@ -173,7 +173,7 @@ export default function PreviewHeroSection({ realtor }: { realtor: Realtor }) {
                   </div>
                   <div>
                     <div className="text-sm font-semibold text-gray-900">Top Performer</div>
-                    <div className="text-xs text-gray-500">2024 Award</div>
+                    <div className="text-xs text-gray-500">⭐⭐⭐⭐⭐</div>
                   </div>
                 </div>
               </motion.div>

@@ -118,7 +118,7 @@ export default function PreviewListingsSection({ realtor }: { realtor: Realtor }
                 >
                   <Button
                     className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold"
-                    onClick={() => window.open("https://wa.me/93248226367", "_blank")}
+                    onClick={() => window.open("/contact", "_blank")}
                   >
                     Contact {realtor.firstName}
                   </Button>
@@ -140,7 +140,7 @@ export default function PreviewListingsSection({ realtor }: { realtor: Realtor }
             variant="outline"
             size="lg"
             className="px-8 py-3 text-lg font-semibold border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300"
-            onClick={() => window.open("https://wa.me/93248226367", "_blank")}
+            onClick={() => window.open("/contact", "_blank")}
           >
             View All {realtor.firstName}'s Properties
           </Button>
