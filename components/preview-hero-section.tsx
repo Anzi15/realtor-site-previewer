@@ -132,7 +132,7 @@ export default function PreviewHeroSection({ realtor }: { realtor: Realtor }) {
                 transition={{ duration: 0.3 }}
               >
                 <Image
-                  src={realtor.imgSrc || "/https://st.depositphotos.com/1194063/2151/i/450/depositphotos_21515189-stock-photo-agent-with-house-model-and.jpg"}
+                  src={realtor.imgSrc || "/steptodown.com579745.jpg"}
                   alt={realtor.fullName}
                   fill
                   className="object-cover aspect-square"
